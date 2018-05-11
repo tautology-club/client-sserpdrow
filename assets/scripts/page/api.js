@@ -16,6 +16,16 @@ const createPage = function (data) {
   })
 }
 
+const showAllPages = function () {
+  return $.ajax({
+    url: config.apiUrl + '/pages',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json'
+    }
+  })
+}
+
 const getPages = function () {
   return $.ajax({
     url: config.apiUrl + '/pages',
@@ -53,6 +63,7 @@ const deletePage = function (pageId) {
 module.exports = {
   createPage,
   getPages,
+  showAllPages,
   updatePages,
   deletePage
 }

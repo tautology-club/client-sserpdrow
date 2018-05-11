@@ -16,6 +16,16 @@ const createBlog = function (data) {
   })
 }
 
+const showAllBlogs = function () {
+  return $.ajax({
+    url: config.apiUrl + '/blogs',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json'
+    }
+  })
+}
+
 const getBlogs = function () {
   return $.ajax({
     url: config.apiUrl + '/blogs',
@@ -53,6 +63,7 @@ const deleteBlog = function (blogId) {
 module.exports = {
   createBlog,
   getBlogs,
+  showAllBlogs,
   updateBlogs,
   deleteBlog
 }

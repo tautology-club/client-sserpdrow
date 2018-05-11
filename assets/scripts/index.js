@@ -9,6 +9,8 @@ const authEvents = require('./auth/events.js')
 const pageEvents = require('./page/events.js')
 const blogEvents = require('./blog/events.js')
 
+pageEvents.onShowPages()
+
 $(() => {
   // AddHandlers
   authEvents.addHandlers()

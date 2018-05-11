@@ -20,6 +20,13 @@ const onGetPages = (event) => {
     .catch(ui.getPagesFailure)
 }
 
+const onShowPages = () => {
+  // event.preventDefault()
+  api.showAllPages()
+    .then(ui.showPagesSuccess)
+    .catch(ui.showPagesFailure)
+}
+
 const onGetMyPages = (event) => {
   event.preventDefault()
   api.getPages()
@@ -50,6 +57,7 @@ const addHandlers = () => {
   $('#create-page').on('submit', onCreatePage)
   $('#getPages').on('click', onGetPages)
   $('#getMyPages').on('click', onGetMyPages)
+  $('#public-page-load').on('click', onShowPages)
   $('#page-load').on('click', function () {
     $('#all-blog-content').addClass('hidden')
     $('#all-page-content').removeClass('hidden')
@@ -60,5 +68,6 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  onGetPages
+  onGetPages,
+  onShowPages
 }

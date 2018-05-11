@@ -126,9 +126,22 @@
       <div>
         <p class="status"></p>
       </div>
-      <!--Handlebars Content -->
-      <div class="main-content">
-        <div class="page-dashboard">
+
+
+<!--Pages and Blog Dashboards with tabs to seperate them  -->
+<section>
+    <!--Tabs for Div Content  -->
+    <ul class="nav nav-tabs nav-justified">
+      <li class="active"><a data-toggle="tab" id="page-load" href=".page-dashboard">Pages</a></li>
+      <li><a data-toggle="tab" id="blog-load" href=".blog-dashboard">Blogs</a></li>
+    </ul>
+    <!--End of Tabs for Div Content  -->
+
+    <!--Dashboard for Pages  -->
+    <div class="tab-content">
+      <div id="all-page-content">
+        <div class="page-dashboard" class="tab-pane fade in active">
+          <!--Handlebars Content -->
           <!-- Create Page Button Trigger Modal -->
           <input required type="button" class="btn btn-default hidden show-on-sign-in create-page" data-toggle="modal" data-target="#myModalCreatePage" value="Create Page">
           <!--INDEX all pages button -->
@@ -146,16 +159,16 @@
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                   <h4 class="modal-title" id="myModalLabel">Create Page</h4>
                 </div>
-                <div class="modal-body">
-                  <form id="create-page">
-                    <input required type="text" name="page[name]" placeholder="Name">
-                    <input required type="text" name="page[text]" placeholder="Text">
-                    <input required type="submit" value="Create Page">
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <h2 class="createPageMessage"></h2>
-                </div>
+              <div class="modal-body">
+                <form id="create-page">
+                  <input required type="text" name="page[name]" placeholder="Name">
+                  <input required type="text" name="page[text]" placeholder="Text">
+                  <input required type="submit" value="Create Page">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <h2 class="createPageMessage"></h2>
+              </div>
               </div>
             </div>
           </div>
@@ -165,9 +178,12 @@
         </div>
       </div>
       <!--End Handlebars Content  -->
+    <!--End of Dashboard for Pages-->
 
-      <!-- blog dashboard modals -->
-      <div class="blog-dashboard">
+  <!--Dashboard for Blogs  -->
+    <div id="all-blog-content" class='hidden'>
+      <div class="blog-dashboard" class="tab-pane fade">
+        <!-- blog dashboard modals -->
         <!-- Create Page Button Trigger Modal -->
         <input required type="button" class="btn btn-default hidden show-on-sign-in create-blog" data-toggle="modal" data-target="#myModalCreateBlog" value="Create Blog">
         <!--INDEX all pages button -->
@@ -178,29 +194,35 @@
 
 
         <!-- Create Page Modal Begin -->
-        <div class="modal fade" id="myModalCreateBlog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Create Page</h4>
-              </div>
-              <div class="modal-body">
-                <form id="create-blog">
-                  <input required type="text" name="blog[title]" placeholder="Title">
-                  <input required type="text" name="blog[body]" placeholder="Body">
-                  <input required type="submit" value="Create Blog">
-                </form>
-              </div>
-              <div class="modal-footer">
-                <h2 class="createBlogMessage"></h2>
-              </div>
+      <div class="modal fade" id="myModalCreateBlog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Create Page</h4>
+            </div>
+            <div class="modal-body">
+              <form id="create-blog">
+                <input required type="text" name="blog[title]" placeholder="Title">
+                <input required type="text" name="blog[body]" placeholder="Body">
+                <input required type="submit" value="Create Blog">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <h2 class="createBlogMessage"></h2>
             </div>
           </div>
         </div>
-        <!--Create Page Modal End  -->
       </div>
+      <!--Create Page Modal End  -->
       <div class="blog-content">
       </div>
+      </div>
+    </div>
+    <!--End of Dashboard for Blogs  -->
+    </div>
+</section>
+<!--End of Pages and Blog Content Divs  -->
+
     </body>
 </html>

@@ -4,9 +4,94 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 $border-color: #06c;
 
+body {
+  font-family: 'Noto Serif', serif;
+  background-color: #e0ffee;
+}
+
+
+
 .content,
 .blog {
   border: 1px solid $border-color;
   height: 300px;
   overflow: scroll;
+}
+
+p {
+  font-size: 65px;
+  color: green;
+  font-family: 'Lobster Two';
+  text-shadow: -2px 2px lightblue;
+  padding-left: 15px;
+}
+
+a,
+li {
+
+}
+
+a{
+  font-size: 25px;
+  // background-color: #fff;
+
+}
+
+section {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 35px;
+}
+
+.navbar-nav {
+  display: inline-flex;
+}
+
+.status {
+  text-align: center;
+  height: 67px;
+}
+
+.page-dashboard,
+.blog-dashboard {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  background-color: #fff;
+}
+
+.blog-content,
+.page-content {
+  text-align: center;
+  padding-left: -10px;
+  border: 1px solid lightgrey;
+  background-color: #fff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 500px;
+}
+
+ul,
+ol {
+  padding-left: 13px;
+  font-family: 'Noto Serif', serif;
+}
+
+@media only screen and (max-width: 700px) {
+  .btn {
+    margin-left: 100px;
+    margin-top: 0;
+  }
+
+  .blog-content,
+  .page-content {
+    height: 300px;
+  }
 }

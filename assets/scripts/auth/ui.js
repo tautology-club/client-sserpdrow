@@ -59,7 +59,7 @@ const signOutSuccess = function () {
   $('input[type=password]').val('')
   $('.content').empty()
   $('.jumbotron').removeClass('hidden')
-  $('.status').addClass('hidden')
+  $('.status').removeClass('hidden')
   store.user = null
 }
 module.exports = {

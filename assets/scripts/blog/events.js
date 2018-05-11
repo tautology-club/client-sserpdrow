@@ -30,9 +30,9 @@ const onGetMyBlogs = (event) => {
 const onUpdateBlogs = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  const blogId = $(event.target).closest('ul').attr('data-id')
+  const blogId = $(event.target).data('id')
   api.updateBlogs(data, blogId)
-    .then(ui.getUpdateBlogSuccess)
+    .then(ui.getUpdateBlogSuccess(blogId))
     .then(() => onGetMyBlogs(event))
     .catch(ui.getUpdateBlogFailure)
 }

@@ -44,10 +44,11 @@ const getMyPagesSuccess = function (data) {
 const getMyPagesFailure = function () {
 }
 
-const getUpdatePageSuccess = function (data) {
+const getUpdatePageSuccess = function (pageId) {
   $('.status').text('You have successfully updated a page!')
   setTimeout(() => $('.status').text(''), 2000)
-  $('#updateModal').modal('toggle')
+  const modalName = '#updateModal' + pageId
+  $(modalName).modal('toggle')
   $('input[type=text]').val('')
 }
 

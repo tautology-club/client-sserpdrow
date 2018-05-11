@@ -14,10 +14,10 @@
       No body provided.
     {{/if}}
   <br>
-    <input type="button" class="btn classic" data-id="{{blog._id}}" data-toggle="modal" data-target="#updateModal" name="Update" id="update-id" value="Update">
+    <input type="button" class="btn classic" data-id="{{blog._id}}" data-toggle="modal" data-target="#updateModal{{blog._id}}" name="Update" class="update-id" value="Update">
 
     <!--Begin Update Modal -->
-    <div class="modal" id="updateModal"  tabindex="-1" role="dialog">
+    <div class="modal blogUpdateModal" id="updateModal{{blog._id}}"  tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -29,6 +29,7 @@
             <p>Name: <input required type="text" name="blog[title]" placeholder="New Name"></p>
             <textarea required type="text" name="blog[body]" maxlength="2000" cols="30" rows="4" placeholder="New Text Here"></textarea>
             <br>
+            <input type="hidden" name="blog[id]" value="{{blog._id}}">
             <input type="submit" data-id="{{blog._id}}" name="submit" value="Update Blog">
           </form>
         </div>

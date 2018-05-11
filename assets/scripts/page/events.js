@@ -30,9 +30,9 @@ const onGetMyPages = (event) => {
 const onUpdatePages = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  const pageId = $(event.target).closest('ul').attr('data-id')
+  const pageId = $(event.target).data('id')
   api.updatePages(data, pageId)
-    .then(ui.getUpdatePageSuccess)
+    .then(ui.getUpdatePageSuccess(pageId))
     .then(() => onGetMyPages(event))
     .catch(ui.getUpdatePageFailure)
 }

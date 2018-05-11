@@ -14,10 +14,10 @@
       No text provided.
     {{/if}}
   <br>
-    <input type="button" class="btn classic" data-id="{{page._id}}" data-toggle="modal" data-target="#updateModal" name="Update" id="update-id" value="Update">
+    <input type="button" class="btn classic" data-id="{{page._id}}" data-toggle="modal" data-target="#updateModal{{blog._id}}" name="Update" value="Update">
 
     <!--Begin Update Modal -->
-    <div class="modal" id="updateModal"  tabindex="-1" role="dialog">
+    <div class="modal" id="updateModal{{blog._id}}"  tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">

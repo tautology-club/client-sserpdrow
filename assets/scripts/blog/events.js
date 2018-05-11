@@ -31,7 +31,6 @@ const onUpdateBlogs = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   const blogId = $(event.target).closest('ul').attr('data-id')
-  console.log(blogId)
   api.updateBlogs(data, blogId)
     .then(ui.getUpdateBlogSuccess)
     .then(() => onGetMyBlogs(event))

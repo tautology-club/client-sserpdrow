@@ -28,7 +28,6 @@ const getPages = function () {
 }
 
 const updatePages = function (data, pageId) {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/pages/' + pageId,
     method: 'PATCH',

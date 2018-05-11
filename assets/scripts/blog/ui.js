@@ -17,7 +17,6 @@ const createBlogFailure = function () {
 }
 
 const getBlogsSuccess = function (data) {
-  console.log('getBlogsSuccess data is', data)
   const getBlogsHTML = showBlogsTemplate({blogs: data.blogs})
   $('.blog-content').html(getBlogsHTML)
   if (data.blogs.length === 0) {
@@ -29,8 +28,6 @@ const getBlogsFailure = function () {
 }
 
 const getMyBlogsSuccess = function (data) {
-  console.log('getMyBlogsSuccess data is', data)
-  console.log('getMyBlogsSuccess store is', store)
   const myBlogs = []
   data.blogs.forEach(function (blog) {
     if (blog.owner === store.user._id) {

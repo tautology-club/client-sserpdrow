@@ -31,7 +31,6 @@ const onUpdatePages = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   const pageId = $(event.target).closest('ul').attr('data-id')
-  console.log(pageId)
   api.updatePages(data, pageId)
     .then(ui.getUpdatePageSuccess)
     .then(() => onGetMyPages(event))

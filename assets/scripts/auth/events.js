@@ -12,7 +12,6 @@ const addHandlers = () => {
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('On signup data ', data)
   document.getElementById('sign-up').reset()
   api.signUp(data)
     .then(ui.signUpSuccess)

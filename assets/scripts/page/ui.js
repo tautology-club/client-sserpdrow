@@ -25,6 +25,7 @@ const getPagesSuccess = function (data) {
 }
 
 const getPagesFailure = function () {
+  $('.status').text('Failed to retrieve pages. No pages were found.')
 }
 
 const getMyPagesSuccess = function (data) {
@@ -42,6 +43,7 @@ const getMyPagesSuccess = function (data) {
 }
 
 const getMyPagesFailure = function () {
+  $('.status').text('Failed to retrieve pages. No pages were found.')
 }
 
 const getUpdatePageSuccess = function (pageId) {
@@ -53,6 +55,7 @@ const getUpdatePageSuccess = function (pageId) {
 }
 
 const getUpdatePageFailure = function () {
+  $('.status').text('Failed to update page. Something has gone wrong.')
 }
 
 const getDeletePageSuccess = function () {
@@ -61,6 +64,7 @@ const getDeletePageSuccess = function () {
 }
 
 const getDeletePageFailure = function () {
+  $('.status').text('Failed to delete page. Something has gone wrong.')
 }
 
 module.exports = {

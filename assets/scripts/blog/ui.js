@@ -44,10 +44,11 @@ const getMyBlogsSuccess = function (data) {
 const getMyBlogsFailure = function () {
 }
 
-const getUpdateBlogSuccess = function (data) {
+const getUpdateBlogSuccess = function (blogId) {
   $('.status').text('You have successfully updated a blog!')
   setTimeout(() => $('.status').text(''), 2000)
-  $('#updateModal').modal('toggle')
+  const modalName = '#updateModal' + blogId
+  $(modalName).modal('toggle')
   $('input[type=text]').val('')
 }
 

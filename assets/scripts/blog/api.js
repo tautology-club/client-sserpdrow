@@ -28,7 +28,6 @@ const getBlogs = function () {
 }
 
 const updateBlogs = function (data, blogId) {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/blogs/' + blogId,
     method: 'PATCH',

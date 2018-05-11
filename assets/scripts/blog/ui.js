@@ -25,6 +25,7 @@ const getBlogsSuccess = function (data) {
 }
 
 const getBlogsFailure = function () {
+  $('.status').text('Failed to retrieve blogs. No blogs were found.')
 }
 
 const getMyBlogsSuccess = function (data) {
@@ -42,6 +43,7 @@ const getMyBlogsSuccess = function (data) {
 }
 
 const getMyBlogsFailure = function () {
+  $('.status').text('Failed to retrieve blogs. No blogs were found.')
 }
 
 const getUpdateBlogSuccess = function (blogId) {
@@ -53,6 +55,7 @@ const getUpdateBlogSuccess = function (blogId) {
 }
 
 const getUpdateBlogFailure = function () {
+  $('.status').text('Failed to update blog. Something has gone wrong.')
 }
 
 const getDeleteBlogSuccess = function () {
@@ -61,6 +64,7 @@ const getDeleteBlogSuccess = function () {
 }
 
 const getDeleteBlogFailure = function () {
+  $('.status').text('Failed to delete blog. Something has gone wrong.')
 }
 
 module.exports = {

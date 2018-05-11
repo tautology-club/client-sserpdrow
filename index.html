@@ -3,7 +3,7 @@
     <head>
       <title>Sserpdrow</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Ewert|Lobster|Lobster+Two|Montserrat|Noto+Serif|Nova+Slim|Permanent+Marker|Roboto|Ubuntu" rel="stylesheet">
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -13,7 +13,7 @@
     </head>
     <body>
       <!-- Navigation Bar  -->
-<nav class="navbar stick navbar-inverse">
+<nav class="navbar stick navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -68,9 +68,9 @@
               </div>
               <div class="modal-body">
                 <form id="sign-up">
-                  <input required type="email" name="credentials[email]" placeholder="123@example.com">
-                  <input required type="password" name="credentials[password]" placeholder="Password">
-                  <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                  <input required type="email" class="form-control" name="credentials[email]" placeholder="123@example.com">
+                  <input required type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                  <input required type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password">
                   <input required type="submit" class="btn btn-default" value="Sign Up!">
                 </form>
               </div>
@@ -174,7 +174,7 @@
           </div>
           <!--Create Page Modal End  -->
         </div>
-        <div class="page-content">
+        <div class="page-content show-on-sign-in">
         </div>
       </div>
       <!--End Handlebars Content  -->
@@ -215,7 +215,7 @@
         </div>
       </div>
       <!--Create Page Modal End  -->
-      <div class="blog-content">
+      <div class="blog-content show-on-sign-in">
       </div>
       </div>
     </div>

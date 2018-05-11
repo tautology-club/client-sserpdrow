@@ -57,6 +57,10 @@ const addHandlers = () => {
   $('#create-page').on('submit', onCreatePage)
   $('#getPages').on('click', onGetPages)
   $('#getMyPages').on('click', onGetMyPages)
+  $('#public-page-load').on('click', function () {
+    $('.public-blog-content').addClass('hidden')
+    $('.public-page-content').removeClass('hidden')
+  })
   $('#public-page-load').on('click', onShowPages)
   $('#page-load').on('click', function () {
     $('#all-blog-content').addClass('hidden')

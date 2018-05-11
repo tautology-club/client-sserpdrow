@@ -65,7 +65,10 @@ const addHandlers = () => {
   $('#getBlogs').on('click', onGetBlogs)
   $('#getMyBlogs').on('click', onGetMyBlogs)
   $('#public-blog-load').on('click', onShowBlogs)
-  // $('#blog-load').on('click', on)
+  $('#public-blog-load').on('click', function () {
+    $('.public-page-content').addClass('hidden')
+    $('.public-blog-content').removeClass('hidden')
+  })
   $('#blog-load').on('click', function () {
     $('#all-page-content').addClass('hidden')
     $('#all-blog-content').removeClass('hidden')

@@ -9,7 +9,13 @@ body {
   background-color: #e0ffee;
 }
 
-
+.brand {
+    font-size: 65px;
+    color: green;
+    font-family: 'Lobster Two';
+    text-shadow: -2px 2px lightblue;
+    padding-left: 15px;
+}
 
 .content,
 .blog {
@@ -18,13 +24,13 @@ body {
   overflow: scroll;
 }
 
-p {
-  font-size: 65px;
-  color: green;
-  font-family: 'Lobster Two';
-  text-shadow: -2px 2px lightblue;
-  padding-left: 15px;
-}
+// p {
+//   font-size: 65px;
+//   color: green;
+//   font-family: 'Lobster Two';
+//   text-shadow: -2px 2px lightblue;
+//   padding-left: 15px;
+// }
 
 a,
 li {
@@ -55,6 +61,11 @@ section {
 .status {
   text-align: center;
   height: 67px;
+  font-size: 65px;
+  color: green;
+  font-family: 'Lobster Two';
+  text-shadow: -2px 2px lightblue;
+  padding-left: 15px;
 }
 
 .page-dashboard,
@@ -75,7 +86,18 @@ section {
   background-color: #fff;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 500px;
+  height: 400px;
+}
+
+
+.public-blog-content,
+.public-page-content {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 400px;
+  text-align: center;
+  border: 1px solid lightgrey;
+  background-color: #fff;
 }
 
 ul,

@@ -28,6 +28,15 @@ const getPagesFailure = function () {
   $('.status').text('Failed to retrieve pages. No pages were found.')
 }
 
+const showPagesSuccess = function (data) {
+  const getPagesHTML = showPagesTemplate({pages: data.pages})
+  $('.public-page-content').html(getPagesHTML)
+}
+
+const showPagesFailure = function () {
+  $('.status').text('Failed to retrieve Pages. No pages were found.')
+}
+
 const getMyPagesSuccess = function (data) {
   const myPages = []
   data.pages.forEach(function (page) {
@@ -72,6 +81,8 @@ module.exports = {
   createPageFailure,
   getPagesSuccess,
   getPagesFailure,
+  showPagesSuccess,
+  showPagesFailure,
   getMyPagesSuccess,
   getMyPagesFailure,
   getUpdatePageSuccess,

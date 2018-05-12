@@ -25,8 +25,10 @@ const signInSuccess = function (data) {
   $('input[type=text]').val('')
   $('input[type=email]').val('')
   $('input[type=password]').val('')
-  $('.jumbotron').addClass('hidden')
+  $('.public').addClass('hidden')
   $('.status').removeClass('hidden')
+  $('.private').removeClass('hidden')
+
   store.user = data.user
 }
 const signInFailure = function () {
@@ -58,8 +60,9 @@ const signOutSuccess = function () {
   $('input[type=text]').val('')
   $('input[type=password]').val('')
   $('.content').empty()
-  $('.jumbotron').removeClass('hidden')
+  $('.public').removeClass('hidden')
   $('.status').removeClass('hidden')
+  $('.private').addClass('hidden')
   store.user = null
 }
 module.exports = {

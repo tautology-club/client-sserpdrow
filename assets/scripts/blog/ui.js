@@ -28,6 +28,15 @@ const getBlogsFailure = function () {
   $('.status').text('Failed to retrieve blogs. No blogs were found.')
 }
 
+const showBlogsSuccess = function (data) {
+  const getBlogsHTML = showBlogsTemplate({blogs: data.blogs})
+  $('.public-blog-content').html(getBlogsHTML)
+}
+
+const showBlogsFailure = function () {
+  $('.status').text('Failed to retrieve blogs. No blogs were found.')
+}
+
 const getMyBlogsSuccess = function (data) {
   const myBlogs = []
   data.blogs.forEach(function (blog) {
@@ -72,6 +81,8 @@ module.exports = {
   createBlogFailure,
   getBlogsSuccess,
   getBlogsFailure,
+  showBlogsSuccess,
+  showBlogsFailure,
   getMyBlogsSuccess,
   getMyBlogsFailure,
   getUpdateBlogSuccess,

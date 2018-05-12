@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
       <title>Sserpdrow</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Ewert|Lobster|Lobster+Two|Montserrat|Noto+Serif|Nova+Slim|Permanent+Marker|Roboto|Ubuntu" rel="stylesheet">
@@ -10,9 +10,11 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <!-- Navigation Bar  -->
+</head>
+
+<body>
+
+<!-- Navigation Bar  -->
 <nav class="navbar stick navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -122,14 +124,36 @@
 <!-- Navigation End  -->
 </nav>
 
-      <!-- status messages -->
-      <div>
-        <p class="status"></p>
-      </div>
+<!--Status Messages Start-->
+<div>
+  <p class="status"></p>
+</div>
+<!--End of Status Message  -->
+
+<section class="public">
+  <ul class="nav nav-tabs nav-justified">
+    <li class="active"><a data-toggle="tab" id="public-page-load" href=".page-dashboard">Pages</a></li>
+    <li><a data-toggle="tab" id="public-blog-load" href=".blog-dashboard">Blogs</a></li>
+  </ul>
+
+<div class="tab-content">
+  <div id="all-public-page-content">
+    <div class="public-page-content">
+    </div>
+  </div>
+
+  <div id="all-public-blog-content">
+    <div class="public-blog-content hidden">
+    </div>
+  </div>
+</div>
+
+
+</section>
 
 
 <!--Pages and Blog Dashboards with tabs to seperate them  -->
-<section>
+<section class="private hidden">
     <!--Tabs for Div Content  -->
     <ul class="nav nav-tabs nav-justified">
       <li class="active"><a data-toggle="tab" id="page-load" href=".page-dashboard">Pages</a></li>
@@ -174,7 +198,7 @@
           </div>
           <!--Create Page Modal End  -->
         </div>
-        <div class="page-content show-on-sign-in">
+        <div class="page-content">
         </div>
       </div>
       <!--End Handlebars Content  -->
@@ -215,7 +239,7 @@
         </div>
       </div>
       <!--Create Page Modal End  -->
-      <div class="blog-content show-on-sign-in">
+      <div class="blog-content">
       </div>
       </div>
     </div>
@@ -224,5 +248,5 @@
 </section>
 <!--End of Pages and Blog Content Divs  -->
 
-    </body>
+</body>
 </html>

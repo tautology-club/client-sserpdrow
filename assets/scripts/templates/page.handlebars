@@ -14,6 +14,30 @@
     {{else}}
       No text provided.
     {{/if}}
+  <br>
+  <!-- Button trigger modal -->
+  <!-- <input type="button" class="btn classic" data-id="{{page._id}}" data-toggle="modal" data-target="#publicBlogModal{{page._id}}" name="Public-Blog" value="View Blogs"> -->
+  <!-- Button trigger modal -->
+  <input type="button" class="btn classic" id="publicBlogModalTrigger" data-id="{{page._id}}" data-toggle="modal" data-target="#publicBlogModal" name="Public" value="View Blogs">
+
+<!-- Modal -->
+<div class="modal fade" id="publicBlogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="publicBlogModalLabel">Blogs</h4>
+      </div>
+      <!-- publicBlog handlebars div -->
+      <div class="public-blog-content">
+      </div>
+      <!-- end publicBlog handlebars div -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
   </ul>
 </div>
 <hr>

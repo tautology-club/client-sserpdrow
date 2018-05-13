@@ -3,6 +3,8 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const blogUi = require('../blog/ui')
+const blogApi = require('../blog/api')
 
 const onCreatePage = (event) => {
   event.preventDefault()
@@ -53,6 +55,16 @@ const onDeletePage = (event) => {
     .catch(ui.getDeletePageFailure)
 }
 
+const onGetPublicBlogs = (event) => {
+  if (event) {
+    event.preventDefault()
+  }
+  const blogOwner = $(event.target).closest('ul').attr('data-id')
+  blogApi.showPublicBlogs(blogOwner)
+    .then(blogUi.getBlogsSuccess)
+    .catch(blogUi.getBlogsFailure)
+}
+
 const addHandlers = () => {
   $('#create-page').on('submit', onCreatePage)
   $('#getPages').on('click', onGetPages)
@@ -68,6 +80,7 @@ const addHandlers = () => {
   })
   $('.page-content').on('submit', '.update-page', onUpdatePages)
   $('.page-content').on('click', '.destroy-id', onDeletePage)
+  $('.page-content').on('click', '#publicBlogModalTrigger', onGetPublicBlogs)
 }
 
 module.exports = {

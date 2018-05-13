@@ -29,6 +29,7 @@ const getBlogsFailure = function () {
 }
 
 const showBlogsSuccess = function (data) {
+  console.log('showBlogs data is ', data)
   const getBlogsHTML = showBlogsTemplate({blogs: data.blogs})
   $('.public-blog-content').html(getBlogsHTML)
 }
@@ -37,7 +38,23 @@ const showBlogsFailure = function () {
   $('.status').text('Failed to retrieve blogs. No blogs were found.')
 }
 
+const getPublicBlogsSuccess = function (data) {
+  console.log('getMyBlogsSuccess data is ', data)
+  const publicBlogs = []
+  data.blogs.forEach(function (blog) {
+    if (data.owner === blog.owner) {
+      publicBlogs.push(blog)
+    }
+  })
+  const getBlogsHTML = showBlogsTemplate({blogs: publicBlogs})
+  $('.public-blog-content').html(getBlogsHTML)
+  if (publicBlogs.length === 0) {
+    $('.public-blog-content').html('<h2>No blogs were found</h2>')
+  }
+}
+
 const getMyBlogsSuccess = function (data) {
+  console.log('getMyBlogsSuccess data is ', data)
   const myBlogs = []
   data.blogs.forEach(function (blog) {
     if (blog.owner === store.user._id) {
@@ -83,6 +100,7 @@ module.exports = {
   getBlogsFailure,
   showBlogsSuccess,
   showBlogsFailure,
+  getPublicBlogsSuccess,
   getMyBlogsSuccess,
   getMyBlogsFailure,
   getUpdateBlogSuccess,

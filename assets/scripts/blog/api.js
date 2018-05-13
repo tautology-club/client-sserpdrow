@@ -26,6 +26,17 @@ const showAllBlogs = function () {
   })
 }
 
+const showPublicBlogs = function (blogOwner) {
+  return $.ajax({
+    url: config.apiUrl + '/blogs',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json'
+    },
+    blogOwner
+  })
+}
+
 const getBlogs = function () {
   return $.ajax({
     url: config.apiUrl + '/blogs',
@@ -65,5 +76,6 @@ module.exports = {
   getBlogs,
   showAllBlogs,
   updateBlogs,
-  deleteBlog
+  deleteBlog,
+  showPublicBlogs
 }

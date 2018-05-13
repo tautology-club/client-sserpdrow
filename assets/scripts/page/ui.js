@@ -17,6 +17,7 @@ const createPageFailure = function () {
 }
 
 const getPagesSuccess = function (data) {
+  console.log('getPagesSuccess data is ', data)
   const getPagesHTML = showPagesTemplate({pages: data.pages})
   $('.page-content').html(getPagesHTML)
   if (data.pages.length === 0) {
@@ -29,6 +30,7 @@ const getPagesFailure = function () {
 }
 
 const showPagesSuccess = function (data) {
+  console.log('showPagesSuccess data is ', data)
   const getPagesHTML = showPagesTemplate({pages: data.pages})
   $('.public-page-content').html(getPagesHTML)
 }
@@ -38,6 +40,7 @@ const showPagesFailure = function () {
 }
 
 const getMyPagesSuccess = function (data) {
+  console.log('getMyPagesSuccess data is ', data)
   const myPages = []
   data.pages.forEach(function (page) {
     if (page.owner === store.user._id) {

@@ -55,6 +55,20 @@ const getMyBlogsFailure = function () {
   $('.status').text('Failed to retrieve blogs. No blogs were found.')
 }
 
+const getPublicBlogsSuccess = function (data) {
+  const publicBlogs = []
+  data.blogs.forEach(function (blog) {
+    if (blog.owner === data.owner._id) {
+      publicBlogs.push(blog)
+    }
+  })
+  const getMyBlogsHTML = showMyBlogsTemplate({blogs: publicBlogs})
+  $('.public-blogs-body').html(getMyBlogsHTML)
+  if (publicBlogs.length === 0) {
+    $('.public-blogs-body').html('<h2>No blogs were found</h2>')
+  }
+}
+
 const getUpdateBlogSuccess = function (blogId) {
   $('.status').text('You have successfully updated a blog!')
   setTimeout(() => $('.status').text(''), 2000)
@@ -88,5 +102,6 @@ module.exports = {
   getUpdateBlogSuccess,
   getUpdateBlogFailure,
   getDeleteBlogSuccess,
-  getDeleteBlogFailure
+  getDeleteBlogFailure,
+  getPublicBlogsSuccess
 }

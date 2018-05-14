@@ -1,15 +1,14 @@
 {{#each pages as |page|}}
 <div>
-  <h1 data-id="{{page.id}}" class="my-page"> <small>{{page.name}}</small></h1>
+  <h1 data-id="{{page.id}}" class="my-page"><small>Owner:{{page.owner}}</small></h1>
   <ul data-id="{{page.id}}">
     Name: {{#if page.name}}
       {{page.name}}
     {{else}}
       No name provided.
     {{/if}}
-<br>
-
-  Text: {{#if page.text}}
+  <br>
+    Text: {{#if page.text}}
       {{page.text}}
     {{else}}
       No text provided.

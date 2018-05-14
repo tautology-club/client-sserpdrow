@@ -1,6 +1,6 @@
 {{#each pages as |page|}}
 <div>
-  <h1 data-id="{{page._id}}" class="my-page"> <small>{{page.name}}</small></h1>
+  <h1 data-id="{{page._id}}" class="my-page"> <small>Page ID:{{page._id}}</small></h1>
   <ul data-id="{{page._id}}">
     Name: {{#if page.name}}
       {{page.name}}

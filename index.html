@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Sserpdrow</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Ewert|Lobster|Lobster+Two|Montserrat|Noto+Serif|Nova+Slim|Permanent+Marker|Roboto|Ubuntu" rel="stylesheet">
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+<!-- Navigation Bar  -->
+<nav class="navbar stick navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <p class="brand">Sserpdrow</p>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+      <div class="nav navbar-nav navbar-right">
+        <!--Sign In Button Trigger Modal  -->
+        <input required type="button" class="btn btn-default  sign-in" data-toggle="modal" data-target="#myModal" value="Log In!">
+        <!-- Sign-In Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Log In!</h4>
+              </div>
+              <div class="modal-body">
+                <form id="sign-in">
+                  <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+                  <input required type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                  <input required type="submit" class="btn btn-default" value="Log-In">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <h2 class="authmessage"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Sign-In Modal End  -->
+
+        <!-- Sign Up Button Trigger Modal -->
+        <input type="button" class="btn btn-default  sign-up" data-toggle="modal" data-target="#myModal1" value="Sign Up!">
+        <!-- Sign- Up Modal -->
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Sign Up!</h4>
+              </div>
+              <div class="modal-body">
+                <form id="sign-up">
+                  <input required type="email" class="form-control" name="credentials[email]" placeholder="123@example.com">
+                  <input required type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                  <input required type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                  <input required type="submit" class="btn btn-default" value="Sign Up!">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <h2 class="authmessage1"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Sign Up Modal End  -->
+
+        <!-- Change Password Button Trigger Modal -->
+        <input required type="button" class="btn btn-default hidden show-on-sign-in  change-password" data-toggle="modal" data-target="#myModal2" value="Change Password">
+
+        <!-- Change Password Modal Begin -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+              </div>
+              <div class="modal-body">
+                <form id="change-password">
+                  <input required type="password" name="passwords[old]" placeholder="Old Password">
+                  <input required type="password" name="passwords[new]" placeholder="New Password">
+                  <input required type="submit" value="Change Password ">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <h2 class="authmessage2"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Change Password Modal End  -->
+
+        <!--Sign Out Button Start -->
+        <form id="sign-out">
+          <!-- <fieldset> -->
+          <input required type="submit" class="btn btn-default hidden show-on-sign-in  sign-out" value="Sign Out">
+          <!-- </fieldset> -->
+        </form>
+        <!--Sign Out Button End  -->
+
+      </div>
+    </div>
+  </div>
+<!-- Navigation End  -->
+</nav>
+
+<!--Status Messages Start-->
+<div>
+  <p class="status"></p>
+</div>
+<!--End of Status Message  -->
+
+<section class="public">
+  <ul class="nav nav-tabs nav-justified">
+    <li class="active"><a data-toggle="tab" id="public-page-load" href=".page-dashboard">Pages</a></li>
+    <li><a data-toggle="tab" id="public-blog-load" href=".blog-dashboard">Blogs</a></li>
+  </ul>
+
+<div class="tab-content">
+  <div id="all-public-page-content">
+    <div class="public-page-content">
+    </div>
+  </div>
+
+  <div id="all-public-blog-content">
+    <div class="public-blog-content hidden">
+    </div>
+  </div>
+</div>
+
+
+</section>
+
+
+<!--Pages and Blog Dashboards with tabs to seperate them  -->
+<section class="private hidden">
+    <!--Tabs for Div Content  -->
+    <ul class="nav nav-tabs nav-justified">
+      <li class="active"><a data-toggle="tab" id="page-load" href=".page-dashboard">Pages</a></li>
+      <li><a data-toggle="tab" id="blog-load" href=".blog-dashboard">Blogs</a></li>
+    </ul>
+    <!--End of Tabs for Div Content  -->
+
+    <!--Dashboard for Pages  -->
+    <div class="tab-content">
+      <div id="all-page-content">
+        <div class="page-dashboard" class="tab-pane fade in active">
+          <!--Handlebars Content -->
+          <!-- Create Page Button Trigger Modal -->
+          <input required type="button" class="btn btn-default hidden show-on-sign-in create-page" data-toggle="modal" data-target="#myModalCreatePage" value="Create Page">
+          <!--INDEX all pages button -->
+          <button class="btn btn-default hidden show-on-sign-in get-pages" type="button" name="button" id="getPages">Get All Pages</button>
+
+          <!--INDEX MY pages button -->
+          <button class="btn btn-default hidden show-on-sign-in get-my-pages" type="button" name="button" id="getMyPages">Get My Pages</button>
+
+
+          <!-- Create Page Modal Begin -->
+          <div class="modal fade" id="myModalCreatePage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Create Page</h4>
+                </div>
+              <div class="modal-body">
+                <form id="create-page">
+                  <input required type="text" name="page[name]" placeholder="Name">
+                  <input required type="text" name="page[text]" placeholder="Text">
+                  <input required type="submit" value="Create Page">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <h2 class="createPageMessage"></h2>
+              </div>
+              </div>
+            </div>
+          </div>
+          <!--Create Page Modal End  -->
+        </div>
+        <div class="page-content">
+        </div>
+      </div>
+      <!--End Handlebars Content  -->
+    <!--End of Dashboard for Pages-->
+
+  <!--Dashboard for Blogs  -->
+    <div id="all-blog-content" class='hidden'>
+      <div class="blog-dashboard" class="tab-pane fade">
+        <!-- blog dashboard modals -->
+        <!-- Create Page Button Trigger Modal -->
+        <input required type="button" class="btn btn-default hidden show-on-sign-in create-blog" data-toggle="modal" data-target="#myModalCreateBlog" value="Create Blog">
+        <!--INDEX all pages button -->
+        <button class="btn btn-default hidden show-on-sign-in get-blogs" type="button" name="button" id="getBlogs">Get All Blogs</button>
+
+        <!--INDEX MY pages button -->
+        <button class="btn btn-default hidden show-on-sign-in get-my-blogs" type="button" name="button" id="getMyBlogs">Get My Blogs</button>
+
+
+        <!-- Create Page Modal Begin -->
+      <div class="modal fade" id="myModalCreateBlog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Create Page</h4>
+            </div>
+            <div class="modal-body">
+              <form id="create-blog">
+                <input required type="text" name="blog[title]" placeholder="Title">
+                <input required type="text" name="blog[body]" placeholder="Body">
+                <input required type="submit" value="Create Blog">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <h2 class="createBlogMessage"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Create Page Modal End  -->
+      <div class="blog-content">
+      </div>
+      </div>
+    </div>
+    <!--End of Dashboard for Blogs  -->
+    </div>
+</section>
+<!--End of Pages and Blog Content Divs  -->
+
+</body>
+</html>

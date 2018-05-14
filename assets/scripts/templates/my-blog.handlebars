@@ -1,6 +1,6 @@
 {{#each blogs as |blog|}}
 <div>
-  <h1 data-id="{{blog._id}}" class="my-blog"> <small>{{blog.title}}</small></h1>
+  <h1 data-id="{{blog._id}}" class="my-blog"> <small>Blog ID: {{blog._id}}</small></h1>
   <ul data-id="{{blog._id}}">
     Name: {{#if blog.title}}
       {{blog.title}}
